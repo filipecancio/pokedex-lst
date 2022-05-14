@@ -9,15 +9,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import dev.cancio.pokedex.R
+import dev.cancio.pokedex.model.Pokemon
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun PokemonList() {
+fun PokemonList(pokemon: Pokemon) {
     ListItem(
-        text = { Text(text = "Pokemon") },
+        text = { Text(text = pokemon.name) },
         icon = {
             Image(
-            painter = painterResource(id = R.drawable.ic_launcher_background),
+            painter = painterResource(id = R.drawable.pikachu),
             contentDescription = "pokemon"
         )
         }
