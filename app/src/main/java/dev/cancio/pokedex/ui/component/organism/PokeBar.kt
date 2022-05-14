@@ -3,16 +3,19 @@ package dev.cancio.pokedex.ui.component.organism
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import dev.cancio.pokedex.ui.screen.HomeScreen
 import dev.cancio.pokedex.ui.screen.LikeScreen
 import dev.cancio.pokedex.ui.component.organism.BottomNavItem.Likes
@@ -57,9 +60,16 @@ sealed class BottomNavItem(
     val title: String,
     val screen: (@Composable () -> Unit)) {
     object Home : BottomNavItem("home", Icons.Filled.Home, "Home", { HomeScreen() })
-    object Likes : BottomNavItem("likes", Icons.Filled.Favorite, "Likes", { LikeScreen() })
+    object Likes : BottomNavItem("likes", Icons.Filled.Star, "Likes", { LikeScreen() })
 }
 
 sealed class PokedexRoutes(val itemList: List<BottomNavItem>){
     object MainRoute: PokedexRoutes(listOf(Home, Likes))
+}
+
+@Preview
+@Composable
+fun previewPokeBar(){
+    val navController = rememberNavController()
+    PokeBar(navController, PokedexRoutes.MainRoute.itemList)
 }
