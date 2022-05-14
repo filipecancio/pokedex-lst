@@ -13,33 +13,32 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.cancio.pokedex.R
 import dev.cancio.pokedex.model.PokemonType
-import dev.cancio.pokedex.model.Poketype
-import dev.cancio.pokedex.ui.theme.md_theme_dark_onPrimary
+import dev.cancio.pokedex.model.enum.Poketype
 
 @Composable
-fun TypesBadges(type: PokemonType){
-    Box(
-        Modifier
-        .width(10.dp)
-        .height(10.dp)
-        .background(
-            type.color,
-            shape = RoundedCornerShape(10.dp)
-        )
-            .padding(2.dp)
-    ){
-        Image(
-            imageVector = ImageVector.vectorResource(id = R.drawable.ic_bug),
-            contentDescription = "pokemon",
-            colorFilter = ColorFilter.tint(md_theme_dark_onPrimary),
-            modifier = Modifier.size(8.dp)
-        )
+fun TypesBadges(pokemonType: PokemonType){
+    with(pokemonType.typeContent){
+        Box(
+            Modifier
+                .width(10.dp)
+                .height(10.dp)
+                .background(
+                    secondaryColor,
+                    shape = RoundedCornerShape(10.dp)
+                )
+                .padding(2.dp)
+        ){
+            Image(
+                imageVector = ImageVector.vectorResource(id = icon),
+                contentDescription = "pokemon",
+                colorFilter = ColorFilter.tint(primaryColor),
+                modifier = Modifier.size(8.dp)
+            )
+        }
     }
 }
 
