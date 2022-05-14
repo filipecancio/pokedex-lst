@@ -17,7 +17,7 @@ fun PokeApp() {
             color = MaterialTheme.colorScheme.background
         ) {
             PokedexTheme {
-                Text(text = "Pokedex!")
+                HomeScreen()
             }
         }
     }
