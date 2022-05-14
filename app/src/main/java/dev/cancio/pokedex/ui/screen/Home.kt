@@ -5,12 +5,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dev.cancio.pokedex.api.PokemonResponse
 import dev.cancio.pokedex.ui.component.atom.FeaturedCard
 import dev.cancio.pokedex.ui.component.atom.PokemonList
+import dev.cancio.pokedex.ui.theme.Typography
 
 @Composable
 fun HomeScreen() {
@@ -22,7 +25,19 @@ fun HomeScreen() {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         item {
+            Text(
+                text = "Featured Pokemon",
+                style = Typography.headlineSmall
+            )
+        }
+        item {
             FeaturedCard()
+        }
+        item {
+            Text(
+                text = "All Pokemons",
+                style = Typography.headlineSmall
+            )
         }
         items(
             items = pokemonList,
