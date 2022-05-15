@@ -24,13 +24,7 @@ fun HomeScreen() {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         item {
-            Text(
-                text = "Featured Pokemon",
-                style = Typography.headlineSmall
-            )
-        }
-        item {
-            FeaturedCard()
+            FeaturedCard(pokemonList.shuffled().first())
         }
         item {
             Text(

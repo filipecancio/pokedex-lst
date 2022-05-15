@@ -73,6 +73,7 @@ val purple_1 = Color(0xFF315FC1)
 val red_1 = Color(0xFFF25F5C)
 val white_1 = Color(0xFFFFFFFF)
 val yellow_1 = Color(0xFFFCD116)
+val yellow_2 = Color(0xFFFDEA95)
 
 val black_08 = Color(0x80000000)
 val blue_08 = Color(0x801D8ACB)

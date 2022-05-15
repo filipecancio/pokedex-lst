@@ -9,8 +9,8 @@ import dev.cancio.pokedex.model.enum.Poketype.*
 import dev.cancio.pokedex.ui.theme.*
 
 data class PokemonType(
-    val slot: Poketype,
-    val type: String
+    val slot: Poketype = Poketype.values().toList().shuffled().first(),
+    val type: String = ""
 ) {
     val typeContent: Type
         get() = when (slot) {

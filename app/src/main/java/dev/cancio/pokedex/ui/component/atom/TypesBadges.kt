@@ -24,19 +24,19 @@ fun TypesBadges(pokemonType: PokemonType){
     with(pokemonType.typeContent){
         Box(
             Modifier
-                .width(10.dp)
-                .height(10.dp)
+                .width(30.dp)
+                .height(30.dp)
                 .background(
                     secondaryColor,
-                    shape = RoundedCornerShape(10.dp)
+                    shape = RoundedCornerShape(30.dp)
                 )
-                .padding(2.dp)
+                .padding(5.dp)
         ){
             Image(
                 imageVector = ImageVector.vectorResource(id = icon),
                 contentDescription = "pokemon",
                 colorFilter = ColorFilter.tint(primaryColor),
-                modifier = Modifier.size(8.dp)
+                modifier = Modifier.size(25.dp)
             )
         }
     }
