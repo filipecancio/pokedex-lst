@@ -47,6 +47,9 @@ android {
 
 dependencies {
 
+
+    //Image URL
+    implementation("io.coil-kt:coil-compose:1.3.1")
     //Material
     implementation 'androidx.compose.material3:material3:1.0.0-alpha10'
     implementation 'com.google.android.material:material:1.5.0'

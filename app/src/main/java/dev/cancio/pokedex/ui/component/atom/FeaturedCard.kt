@@ -2,25 +2,18 @@
 
 package dev.cancio.pokedex.ui.component.atom
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.unit.dp
-import dev.cancio.pokedex.R
 import dev.cancio.pokedex.model.Pokemon
 import dev.cancio.pokedex.model.PokemonType
-import dev.cancio.pokedex.model.enum.Poketype
 import dev.cancio.pokedex.ui.theme.*
 import java.util.*
 
@@ -48,9 +41,8 @@ fun FeaturedCard(pokemon: Pokemon) {
                 .fillMaxWidth(),
             verticalAlignment = Alignment.Bottom
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.pikachu),
-                contentDescription = "pokemon",
+            ImageWeb(
+                url = pokemon.sprite,
                 modifier = Modifier.size(150.dp)
             )
             Column(
