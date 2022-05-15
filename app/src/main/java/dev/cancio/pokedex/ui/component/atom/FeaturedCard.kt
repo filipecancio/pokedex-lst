@@ -29,7 +29,7 @@ fun FeaturedCard(pokemon: Pokemon) {
     Box(
         Modifier
             .fillMaxWidth()
-            .height(300.dp)
+            .height(150.dp)
     ) {
         Box(
             modifier = Modifier
@@ -38,18 +38,18 @@ fun FeaturedCard(pokemon: Pokemon) {
                     shape = RoundedCornerShape(30.dp)
                 )
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(100.dp)
                 .align(Alignment.BottomEnd)
         )
-        Column(
+        Row(
             modifier = Modifier
                 .fillMaxWidth(),
-            horizontalAlignment = Alignment.End
+            verticalAlignment = Alignment.Bottom
         ) {
             Image(
                 painter = painterResource(id = R.drawable.pikachu),
                 contentDescription = "pokemon",
-                modifier = Modifier.size(200.dp)
+                modifier = Modifier.size(150.dp)
             )
             Column(
                 horizontalAlignment = Alignment.Start,

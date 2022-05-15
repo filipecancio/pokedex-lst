@@ -18,26 +18,40 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.cancio.pokedex.model.PokemonType
 import dev.cancio.pokedex.model.enum.Poketype
+import dev.cancio.pokedex.ui.theme.white_1
 
 @Composable
 fun TypesBadges(pokemonType: PokemonType){
     with(pokemonType.typeContent){
-        Box(
-            Modifier
-                .width(30.dp)
-                .height(30.dp)
-                .background(
-                    secondaryColor,
-                    shape = RoundedCornerShape(30.dp)
+        Box{
+            Box(
+                Modifier
+                    .width(30.dp)
+                    .height(30.dp)
+                    .background(
+                        white_1,
+                        shape = RoundedCornerShape(30.dp)
+                    )
+                    .padding(5.dp)
+            ){
+            }
+            Box(
+                Modifier
+                    .width(30.dp)
+                    .height(30.dp)
+                    .background(
+                        secondaryColor,
+                        shape = RoundedCornerShape(30.dp)
+                    )
+                    .padding(5.dp)
+            ){
+                Image(
+                    imageVector = ImageVector.vectorResource(id = icon),
+                    contentDescription = "pokemon",
+                    colorFilter = ColorFilter.tint(primaryColor),
+                    modifier = Modifier.size(25.dp)
                 )
-                .padding(5.dp)
-        ){
-            Image(
-                imageVector = ImageVector.vectorResource(id = icon),
-                contentDescription = "pokemon",
-                colorFilter = ColorFilter.tint(primaryColor),
-                modifier = Modifier.size(25.dp)
-            )
+            }
         }
     }
 }

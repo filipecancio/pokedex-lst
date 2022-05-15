@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import dev.cancio.pokedex.ui.component.organism.MainNavigation
 import dev.cancio.pokedex.ui.component.organism.PokeBar
+import dev.cancio.pokedex.ui.component.organism.PokeHeader
 import dev.cancio.pokedex.ui.component.organism.PokedexRoutes.MainRoute
 import dev.cancio.pokedex.ui.theme.PokedexTheme
 import dev.cancio.pokedex.ui.theme.yellow_1
@@ -33,11 +35,13 @@ fun PokeApp() {
             val navController = rememberNavController()
             Scaffold(
                 bottomBar = { PokeBar(navController, MainRoute.itemList )},
+                topBar = { PokeHeader()}
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(yellow_2),
+                        .background(yellow_2)
+                        .padding(it),
                     contentAlignment = Alignment.Center,
                 ) {
                     MainNavigation(navController, MainRoute.itemList )
