@@ -4,6 +4,7 @@ package dev.cancio.pokedex.ui.component.atom
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -26,6 +27,7 @@ import java.util.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FeaturedCard(pokemon: Pokemon) {
+    val colorContainer = if(isSystemInDarkTheme()) poke_bluegray_02 else poke_yellow_02
     Box(
         Modifier
             .fillMaxWidth()
@@ -34,7 +36,7 @@ fun FeaturedCard(pokemon: Pokemon) {
         Box(
             modifier = Modifier
                 .background(
-                    md_theme_light_primaryContainer,
+                    colorContainer,
                     shape = RoundedCornerShape(30.dp)
                 )
                 .fillMaxWidth()
@@ -66,7 +68,6 @@ fun FeaturedCard(pokemon: Pokemon) {
                         style = Typography.headlineMedium,
                         color = red_1
                     )
-                    TypesBadges(PokemonType())
                     TypesBadges(PokemonType())
                 }
                 Text(

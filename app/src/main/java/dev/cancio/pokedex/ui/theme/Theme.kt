@@ -11,7 +11,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 private val DarkColorPalette = darkColorScheme(
 
     primary = md_theme_dark_primary,
-    onPrimary = md_theme_dark_onPrimary,
+    onPrimary = poke_bluegray_01,
     primaryContainer = md_theme_dark_primaryContainer,
     onPrimaryContainer = md_theme_dark_onPrimaryContainer,
     secondary = md_theme_dark_secondary,
@@ -26,9 +26,9 @@ private val DarkColorPalette = darkColorScheme(
     errorContainer = md_theme_dark_errorContainer,
     onError = md_theme_dark_onError,
     onErrorContainer = md_theme_dark_onErrorContainer,
-    background = md_theme_dark_background,
+    background = poke_bluegray_01,
     onBackground = md_theme_dark_onBackground,
-    surface = md_theme_dark_surface,
+    surface = poke_bluegray_01,
     onSurface = md_theme_dark_onSurface,
     surfaceVariant = md_theme_dark_surfaceVariant,
     onSurfaceVariant = md_theme_dark_onSurfaceVariant,
@@ -41,7 +41,7 @@ private val DarkColorPalette = darkColorScheme(
 private val LightColorPalette = lightColorScheme(
 
     primary = md_theme_light_primary,
-    onPrimary = md_theme_light_onPrimary,
+    onPrimary = poke_yellow_01,
     primaryContainer = md_theme_light_primaryContainer,
     onPrimaryContainer = md_theme_light_onPrimaryContainer,
     secondary = md_theme_light_secondary,
@@ -56,9 +56,9 @@ private val LightColorPalette = lightColorScheme(
     errorContainer = md_theme_light_errorContainer,
     onError = md_theme_light_onError,
     onErrorContainer = md_theme_light_onErrorContainer,
-    background = md_theme_light_background,
+    background = poke_yellow_01,
     onBackground = md_theme_light_onBackground,
-    surface = md_theme_light_surface,
+    surface = poke_yellow_01,
     onSurface = md_theme_light_onSurface,
     surfaceVariant = md_theme_light_surfaceVariant,
     onSurfaceVariant = md_theme_light_onSurfaceVariant,
@@ -76,11 +76,11 @@ fun PokedexTheme(
     val systemUiController = rememberSystemUiController()
     if(darkTheme){
         systemUiController.setSystemBarsColor(
-            color = yellow_1
+            color = poke_bluegray_02
         )
     }else{
         systemUiController.setSystemBarsColor(
-            color = yellow_1
+            color = poke_yellow_02
         )
     }
     val colors = if (darkTheme) {

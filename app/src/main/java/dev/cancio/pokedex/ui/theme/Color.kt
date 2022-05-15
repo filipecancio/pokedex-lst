@@ -85,3 +85,27 @@ val purple_08 = Color(0x80315FC1)
 val red_08 = Color(0x80F25F5C)
 val white_08 = Color(0x80FFFFFF)
 val yellow_08 = Color(0x80FCD116)
+
+
+// New colors variation
+
+//Yellow
+val poke_yellow_01 = Color(0xFFFDEA95)
+val poke_yellow_02 = Color(0xFFFFE77C)
+
+//Blue Gray
+val poke_bluegray_01 = Color(0xFF2A3050)
+val poke_bluegray_02 = Color(0xFF373B5E)
+
+//Red
+val poke_red_01 = Color(0xFFF35F5C)
+val poke_red_02 = Color(0xFFFE8C8A)
+
+//Red
+val poke_red_01_30 = Color(0x4DF35F5C)
+
+//orange
+val poke_orange_01 = Color(0xFFFBBE72)
+
+//orange
+val poke_magenta_01 = Color(0xFF6F465D)

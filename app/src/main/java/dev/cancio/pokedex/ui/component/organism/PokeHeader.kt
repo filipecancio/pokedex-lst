@@ -1,15 +1,15 @@
 package dev.cancio.pokedex.ui.component.organism
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import dev.cancio.pokedex.ui.theme.Typography
-import dev.cancio.pokedex.ui.theme.red_1
-import dev.cancio.pokedex.ui.theme.yellow_1
+import dev.cancio.pokedex.ui.theme.*
 
 @Composable
 fun PokeHeader() {
+    val colorContainer = if(isSystemInDarkTheme()) poke_bluegray_01 else poke_yellow_01
     CenterAlignedTopAppBar(
         title = {
             Text(
@@ -28,7 +28,7 @@ fun PokeHeader() {
             }
         },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = yellow_1
+            containerColor = colorContainer,
         ),
     )
 }

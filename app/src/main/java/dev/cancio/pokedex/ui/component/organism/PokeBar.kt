@@ -1,5 +1,6 @@
 package dev.cancio.pokedex.ui.component.organism
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material.icons.filled.Home
@@ -17,23 +18,31 @@ import dev.cancio.pokedex.ui.screen.HomeScreen
 import dev.cancio.pokedex.ui.screen.LikeScreen
 import dev.cancio.pokedex.ui.component.organism.BottomNavItem.Likes
 import dev.cancio.pokedex.ui.component.organism.BottomNavItem.Home
-import dev.cancio.pokedex.ui.theme.yellow_08
-import dev.cancio.pokedex.ui.theme.yellow_1
-import dev.cancio.pokedex.ui.theme.yellow_2
+import dev.cancio.pokedex.ui.theme.*
 
 @Composable
 fun PokeBar(navController: NavController, itemList: List<BottomNavItem>)  {
     var selectedItem by remember { mutableStateOf(0) }
+    var containerColor = poke_yellow_02
+    var indicatorColor = poke_orange_01
+    if(isSystemInDarkTheme()){
+        containerColor = poke_bluegray_02
+        indicatorColor = poke_magenta_01
+    }
     NavigationBar(
-        containerColor = yellow_2,
+        containerColor = containerColor,
     ) {
         itemList.forEachIndexed { index, item ->
             NavigationBarItem(
                 colors = NavigationBarItemDefaults.colors(
-                    indicatorColor = yellow_08
+                    indicatorColor = indicatorColor,
+                    selectedIconColor = poke_red_01,
+                    unselectedIconColor = poke_red_01,
+                    selectedTextColor = poke_red_01,
+                    unselectedTextColor = poke_red_01
                 ),
                 icon = { Icon(item.icon, contentDescription = null) },
-                //label = { Text(item.title) },
+                label = { Text(item.title) },
                 selected = selectedItem == index,
                 onClick = {
                     selectedItem = index

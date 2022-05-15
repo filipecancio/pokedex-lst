@@ -30,7 +30,6 @@ fun PokeApp() {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = yellow_2,
         ) {
             val navController = rememberNavController()
             Scaffold(
@@ -40,7 +39,6 @@ fun PokeApp() {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(yellow_2)
                         .padding(it),
                     contentAlignment = Alignment.Center,
                 ) {
